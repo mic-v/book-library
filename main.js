@@ -7,10 +7,10 @@ openBtn.addEventListener("click", showForm);
 closeBtn.addEventListener("click", closeForm);
 
 function showForm() {
-    document.getElementById('form').classList.remove('hidden');
+    document.getElementById('popup').classList.remove('hidden');
     console.log("test");
 }
 
 function closeForm() {
-    document.getElementById('form').classList.add('hidden');
+    document.getElementById('popup').classList.add('hidden');
 }

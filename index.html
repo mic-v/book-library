@@ -11,6 +11,18 @@
       rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="main.js" defer></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'black-rgba' : 'rgba(0,0,0,0.88)',
+                    },
+                }
+            }
+        }
+    </script>
+    <link ref="stylesheet" href="main.css">
 </head>
 
 <body class="flex flex-col items-center overflow-y-scroll">
@@ -37,37 +49,45 @@
         </p> 
     </section>
 
-    <div id="form" class="absolute w-8/12 md:w-7/12 lg:w-6/12 xl:w-4/12 h-3/5 m-auto inset-0 bg-blue-500 flex justify-center hidden">
-        <button id="closeForm" type="button" class="">
-            <span class="material-icons text-2xl">
-                close
-            </span>
-        </buttton>
-        <form class="w-11/12 my-5 flex flex-col items-center justify-evenly">
-            <div class="flex flex-col">
-                <label for="bookName">Book Name:</label>
-                <input type="text" id="bookName" name="bookName">
+    <div id="popup" class="absolute w-full h-full bg-black-rgba hidden">
+        <div id="form" class="absolute w-8/12 md:w-7/12 lg:w-6/12 xl:w-4/12 h-3/5 m-auto inset-0 bg-blue-500 opacity-100">
+            <button id="closeForm" type="button" class="absolute top-1 right-1">
+                <span class="material-icons text-2xl">
+                    close
+                </span>
+            </button>
+    
+    
+            <div class="h-full flex justify-center">
+                <form class="w-7/12 h-4/5 my-5 flex flex-col justify-evenly">
+                    <div class="flex flex-col">
+                        <label for="bookName">Book Name:</label>
+                        <input type="text" id="bookName" name="bookName">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="author">Author:</label>
+                        <input type="text" id="author" name="author">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="pageNum">Number of Pages:</label>
+                        <input type="text" id="pageNum" name="pageNum" min="1" max="99999">
+                    </div>
+                    <div class="w-full flex flex-row justify-evenly">
+                        <div>
+                            <input type="radio" id="read" name="readCheck" value="Read">
+                            <label for="html">Read</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="notRead" name="readCheck" value="Not Read">
+                            <label for="css">Not Read</label>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="flex flex-col">
-                <label for="author">Author:</label>
-                <input type="text" id="author" name="author">
-            </div>
-            <div class="flex flex-col">
-                <label for="pageNum">Number of Pages:</label>
-                <input type="text" id="pageNum" name="pageNum" min="1" max="99999">
-            </div>
-            <div class="w-full flex flex-row justify-evenly">
-                <div>
-                    <input type="radio" id="read" name="readCheck" value="Read">
-                    <label for="html">Read</label>
-                </div>
-                <div>
-                    <input type="radio" id="notRead" name="readCheck" value="Not Read">
-                    <label for="css">Not Read</label>
-                </div>
-            </div>
-        </form>
+        
+        </div>
     </div>
+
 
     <button id="showForm" type="button" class="absolute bottom-5 right-8">
         <span class="material-icons text-7xl text-blue-500 hover:rotate-[135deg] hover:scale-125 duration-200 transition ease-linear">
