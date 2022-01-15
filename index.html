@@ -34,43 +34,66 @@
                     <div class="bg-blue-500 h-10 w-5 lg:h-12 lg:w-6"></div>
                     <div class="bg-green-500 h-12 w-5 lg:h-16 lg:w-6"></div>
                 </div>
-                <span class="font-semibold text-2xl tracking-tight text-black">Book Keep</span>
+                <span class="font-semibold text-4xl tracking-tight text-black">Book Keep</span>
             </div>
             <div class="">
-                <button class="block py-0 px-0 bg-blue-500 text-blue-100 text-large rounded-lg">Dark Mode</button>
+                <button class="block py-0 px-0 bg-blue-500 text-blue-100 text-md rounded-lg">Dark Mode</button>
             </div>
         </div>
     </nav>
-    <section class="w-11/12 md:9/12 m-10 flex items-center justify-center">
-        <p>
+
+
+    <div class="w-11/12 md:w-8/12">
+        <p class="my-10">
             A book library that allows you to add entries of books that you have read/not read. Keeps tracks of book title, author, and pages. 
             Project inspired by The Odin Project
             
         </p> 
+
+        <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center gap-8 justiify-center">
+            <div class="h-48 px-4  bg-blue-400 rounded-sm text-white flex flex-col justify-around">
+                <div class="text-2xl">Untitled Unmastered</div>
+                <p>By Mr Untitled</p>
+                <p>Publish Date: 04-20-1969 </p>
+                <p>Pages: 6969</p>
+            </div>
+            <div class="h-40 bg-blue-400 rounded-sm text-white flex flex-col justify-around">
+                <h3>Untitled Unmastered</h3>
+                <p>By Mr Untitled</p>
+                <p>Publish Date: 04-20-1969 </p>
+                <p>Pages: 6969</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="w-11/12 md:9/12 m-10 flex items-center justify-center">
     </section>
 
     <div id="popup" class="absolute w-full h-full bg-black-rgba hidden">
-        <div id="form" class="absolute w-8/12 md:w-7/12 lg:w-6/12 xl:w-4/12 h-3/5 m-auto inset-0 bg-blue-500 opacity-100">
+        <div id="form" class="absolute rounded-md w-8/12 md:w-7/12 lg:w-6/12 xl:w-4/12 h-3/5 m-auto inset-0 bg-blue-500 opacity-100">
             <button id="closeForm" type="button" class="absolute top-1 right-1">
                 <span class="material-icons text-2xl">
                     close
                 </span>
             </button>
-    
-    
+
             <div class="h-full flex justify-center">
-                <form class="w-7/12 h-4/5 my-5 flex flex-col justify-evenly">
+                <form class="w-7/12 h-4/5 my-5 flex flex-col justify-evenly align-center">
                     <div class="flex flex-col">
                         <label for="bookName">Book Name:</label>
-                        <input type="text" id="bookName" name="bookName">
+                        <input class="rounded-md" type="text" id="bookName" name="bookName">
                     </div>
                     <div class="flex flex-col">
                         <label for="author">Author:</label>
-                        <input type="text" id="author" name="author">
+                        <input class="rounded-md" type="text" id="author" name="author">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="publishDate">Publish Date:</label>
+                        <input class="rounded-md" type="date" id="publishDate" name="publishDate">
                     </div>
                     <div class="flex flex-col">
                         <label for="pageNum">Number of Pages:</label>
-                        <input type="text" id="pageNum" name="pageNum" min="1" max="99999">
+                        <input class="rounded-md" type="text" id="pageNum" name="pageNum" min="1" max="99999">
                     </div>
                     <div class="w-full flex flex-row justify-evenly">
                         <div>
@@ -82,18 +105,18 @@
                             <label for="css">Not Read</label>
                         </div>
                     </div>
+                    <button class="w-8/12 bg-white">
+                        <span>Submit</span>
+                    </button>
                 </form>
             </div>
         
         </div>
     </div>
-
-
     <button id="showForm" type="button" class="absolute bottom-5 right-8">
         <span class="material-icons text-7xl text-blue-500 hover:rotate-[135deg] hover:scale-125 duration-200 transition ease-linear">
             add_circle
         </span>
     </button>
     <hr>
-
 </body>
